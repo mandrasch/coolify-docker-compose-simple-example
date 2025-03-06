@@ -4,5 +4,3 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.prod
-    ports:
-      - "8080:80"
