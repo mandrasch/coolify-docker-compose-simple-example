@@ -4,5 +4,7 @@ services:
     image: nginx:alpine
     volumes:
       - ./web:/usr/share/nginx/html
+      - ./docker-compose/nginx:/etc/nginx/conf.d/
+
     ports:
       - "8080:80"
