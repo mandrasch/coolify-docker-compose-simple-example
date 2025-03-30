@@ -1,11 +1,6 @@
-# Dockerfile.prod
-# Use the official NGINX image
-FROM nginx:alpine
+FROM craftcms/nginx:8.2
 
-# Copy the production HTML files into the default NGINX public directory
-COPY ./web /usr/share/nginx/html
+# Install composer
+COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
-# Expose port 80 (the default port NGINX listens on)
-EXPOSE 80
-
-# Start NGINX (this is the default behavior, no CMD or ENTRYPOINT needed)
+WORKDIR /app
